@@ -1,0 +1,22 @@
+{% load crispy_forms_tags %}
+<header class="header">
+  <!-- Main Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'bingo:home' %}">
+      <i class="fas fa-dice-d20 prefix"></i>
+      <span>THE VIRTUAL BINGO</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <form class="form-inline my-2 my-lg-0 ml-auto" method="POST">
+        {% csrf_token %}
+        {{search_form|crispy}}
+        <button class="my-2 my-sm-0" name="{{search_form.prefix}}" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </nav>
+</header>

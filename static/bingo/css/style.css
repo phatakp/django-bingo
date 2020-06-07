@@ -1,0 +1,66 @@
+html,
+body,
+section {
+  font-family: 'Rajdhani', sans-serif;
+  height: 95%;
+}
+
+.navbar {
+  background: none !important;
+}
+
+.form-group label {
+  display: None !important;
+}
+
+.card {
+  border: 2px solid darkgrey;
+  border-radius: 5%;
+}
+
+.card-title {
+  font-weight: bold;
+  color: blue;
+}
+
+table {
+  border-spacing: 1rem;
+  padding: 1rem;
+}
+
+td.search,
+td.player {
+  border: 1px solid #ccc !important;
+  border-radius: 15% !important;
+  background: skyblue;
+  margin: 2rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  font-size: 1.25rem !important;
+}
+
+td.player.crossed {
+  background: olive !important;
+  font-weight: bold;
+  /* color: red !important; */
+}
+
+.footer {
+  background: black;
+  width: 100%;
+  height: 2rem;
+  color: ivory;
+}
+
+/* @media screen and (min-width: 320px) and (max-width: 800px) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: scroll;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 80%;
+  }
+} */
