@@ -1,4 +1,4 @@
-Django==3.0.6
+giDjango==3.0.6
 django-allauth==0.41.0
 django-crispy-forms==1.9.0
 django-jquery==1.9.1

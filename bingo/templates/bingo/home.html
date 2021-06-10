@@ -3,40 +3,20 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<section style="background: url({% static "bingo/images/back.jpg" %}); background-size: cover; background-position: center center" class="hero">
+<section
+  style="background: url({% static "bingo/images/back.jpg" %}); background-size: cover; background-position: center center"
+  class="hero">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="card my-5">
           <div class="card-body">
-            {% if ticket %}
-            <h5 class="text-center card-title my-3">Ticket for {{username}}</h5>
-            <hr>
-            <table class="container">
-              {% for row in ticket %}
-              <tr>
-                {% for num in row %}
-                <td class="text-center {{prefix}}">
-                  {% if num == 0 or num == '0' %}
-                  {{ ' ' }}
-                  {% else %}
-                  {{ num }}
-                  {% endif %}
-                </td>
-                {% endfor %}
-              </tr>
-              {% endfor %}
-            </table>
-            {% elif error_message %}
-            {{error_message}}
-            {% else %}
             <h5 class="card-title my-3">Generate Bingo Ticket</h5>
-            <form action="." method="POST">
+            <form method="POST" id="create-form">
               {% csrf_token %}
-              {{player_form|crispy}}
-              <button type="submit" name="{{player_form.prefix}}" class="btn btn-primary">Submit</button>
+              {{form|crispy}}
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            {% endif %}
           </div>
         </div>
       </div>

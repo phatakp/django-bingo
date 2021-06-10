@@ -1,48 +1,159 @@
-html,
-body,
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 section {
-  font-family: 'Rajdhani', sans-serif;
-  height: 95%;
+  height: 100vh;
 }
 
 .navbar {
   background: none !important;
 }
 
+.nav-link {
+  color: var(--primary) !important;
+}
+
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
+
 .form-group label {
   display: None !important;
 }
 
+.btn {
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+  color: yellow;
+  box-shadow: 0 6px 10px #5ba5f3;
+}
+
+#norton-idsafe-field-logo-imgId,
+#norton-idsafe-field-styling-divId {
+  display: none;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid gray;
+  margin: 2rem 0;
+  background: transparent;
+  color: whitesmoke;
+}
+
+.form-control:focus {
+  border: none;
+  border-bottom: 2px solid var(--primary);
+}
+
 .card {
-  border: 2px solid darkgrey;
-  border-radius: 5%;
+  border: 1px solid rgb(54, 53, 53);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 10px 10px rgb(54, 53, 53);
+  /* background: linear-gradient(-30deg, #e7e3e2, #f0f3f7); */
+  background: linear-gradient(30deg, rgba(244, 245, 236, 0.575), rgba(211, 211, 195, 0.719), rgba(221, 220, 209, 0.74)) !important;
+}
+
+.ticket-card {
+  width: 55%;
+  margin-left: 25%;
 }
 
 .card-title {
   font-weight: bold;
-  color: blue;
+  color: var(--primary);
 }
 
 table {
-  border-spacing: 1rem;
-  padding: 1rem;
+  padding-left: -1rem;
 }
 
-td.search,
-td.player {
-  border: 1px solid #ccc !important;
-  border-radius: 15% !important;
-  background: skyblue;
-  margin: 2rem !important;
+
+td {
+  border: 2px solid #ccc;
+  background: linear-gradient(30deg, rgb(243, 247, 200), rgb(250, 248, 150), rgb(247, 241, 162)) !important;
   width: 3rem !important;
   height: 3rem !important;
   font-size: 1.25rem !important;
+  padding: 0.5rem;
+  /* border-radius: 50%; */
+  margin: 1rem;
 }
 
-td.player.crossed {
-  background: olive !important;
-  font-weight: bold;
-  /* color: red !important; */
+
+
+td.player:hover {
+  cursor: pointer;
+}
+
+td.crossed {
+  background: linear-gradient(30deg, rgb(43, 73, 3), rgb(74, 124, 8), rgb(112, 194, 5)) !important;
+  color: whitesmoke;
+}
+
+.number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.rand-card {
+  background: linear-gradient(45deg, #adadad, #ccc) !important;
+  width: 80%;
+  margin-left: 20%;
+}
+
+#random {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(60deg, #161849, #2f3310);
+  color: var(--danger);
+}
+
+
+#random_btn {
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 3.5rem;
+  padding: 1rem;
+}
+
+
+#random-table td:not(.crossed) {
+  border: 1px solid transparent;
+  color: #999;
+  border-radius: 50%;
+  height: 4rem !important;
+  background: linear-gradient(to right, #657962, #5b6977) !important;
+}
+
+#random-table td.crossed {
+  border-radius: 50%;
+  border: 1px solid transparent;
 }
 
 .footer {
@@ -52,7 +163,8 @@ td.player.crossed {
   color: ivory;
 }
 
-/* @media screen and (min-width: 320px) and (max-width: 800px) {
+/* 
+@media screen and (min-width: 320px) and (max-width: 800px) {
   html {
     transform: rotate(-90deg);
     transform-origin: left top;
@@ -62,5 +174,23 @@ td.player.crossed {
     top: 100%;
     left: 0;
     font-size: 80%;
+    text-align: center;
+    justify-content: center;
   }
 } */
+
+@media (max-width:576px) {
+  html {
+    font-size: 14px;
+  }
+
+  .rand-card,
+  .ticket-card {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+}

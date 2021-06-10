@@ -1,0 +1,44 @@
+{% extends "bingo/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load custom_tags %}
+
+{% block content %}
+<section
+  style="background: url({% static "bingo/images/back.jpg" %}); background-size: cover; background-position: center center"
+  class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card ticket-card my-5">
+          <div class="card-body">
+            {% if ticket %}
+            <form method="POST">
+              {% csrf_token %}
+            </form>
+            <h5 class="text-center card-title my-3">Ticket for <span id="username">{{username}}</span></h5>
+            <hr>
+            <table class="container" id='player-table'>
+              {% for row in ticket %}
+              <tr>
+                {% for num in row %}
+                <td class="text-center player {% if num|present:username %}crossed{% endif %}">
+                  {% if num == 0 or num == '0' %}
+                  {{ ' ' }}
+                  {% else %}
+                  <span>{{ num }}</span>
+                  {% endif %}
+                </td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </table>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
