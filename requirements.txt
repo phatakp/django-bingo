@@ -3,5 +3,5 @@ django-allauth==0.41.0
 django-crispy-forms==1.9.0
 django-jquery==1.9.1
 dnspython==1.16.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 virtualenv==20.0.20
